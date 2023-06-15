@@ -113,7 +113,7 @@ exports.register_user = async (req, res) => {
     const confirm_password_hash = await bcrypt.hash(confirmPassword, salt);
 
     // Create the new user
-    const doc = new User({
+    const newUser{
       firstName,
       lastName,
       companyName,
@@ -121,7 +121,7 @@ exports.register_user = async (req, res) => {
       email,
       password: password_hash,
       confirmPassword: confirm_password_hash,
-    });
+    };
     // Save the user
     const createdUser = await User.create(newUser);
     if (createdUser?._id) {
