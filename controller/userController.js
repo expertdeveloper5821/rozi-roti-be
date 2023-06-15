@@ -123,8 +123,8 @@ exports.register_user = async (req, res) => {
       confirmPassword: confirm_password_hash,
     });
     // Save the user
-    const user_saved = await doc.save();
-    if (user_saved?._id) {
+    const createdUser = await User.create(newUser);
+    if (createdUser?._id) {
       return res.status(200).json({ message: "User registered Successfully" });
     } else {
       return res.status(200).json({ message: "User not registered" });
