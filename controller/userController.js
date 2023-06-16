@@ -284,7 +284,7 @@ exports.send_user_password_reset_email = async (req, res) => {
           expiresIn: "5m",
         });
         // convert id into query
-        const link = `https://rozi-app.vercel.app/resetpassword/?token=${token}`;
+        const link = `https://rozi-roti-fe.vercel.app/resetpassword/?token=${token}`;
         // send email
         let info = await transporter.sendMail({
           from: process.env.EMAIL_FROM,
